@@ -1,5 +1,8 @@
-// Rust 使用 `impl` 来定义方法
+/* 
+Rust 使用 `impl` 来定义方法
+Rust 的方法往往跟结构体、枚举、特征(Trait)一起使用
 
+*/
 struct Circle {
     x: f64,
     y: f64,
@@ -23,6 +26,7 @@ impl Circle {
     }
 }
 // ===============================================================================
+
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -45,6 +49,13 @@ impl Rectangle {
 // - `self` 表示 `Rectangle` 的所有权转移到该方法中，这种形式用的较少
 // - `&self` 表示该方法对 `Rectangle` 的不可变借用
 // - `&mut self` 表示可变借用
+
+
+
+// 在 Rust 中，允许方法名跟结构体的字段名相同
+// 当我们使用 `rect1.width()` 时，Rust 知道我们调用的是它的方法，如果使用 `rect1.width`，则是访问它的字段
+// 一般来说，方法跟字段同名，往往适用于实现 `getter` 访问器
+
 pub fn impl_method(){
     let rect1 = Rectangle { width: 30, height: 50 };
 
@@ -59,6 +70,10 @@ pub fn impl_method(){
 
 }
 
-// 在 Rust 中，允许方法名跟结构体的字段名相同
-// 当我们使用 `rect1.width()` 时，Rust 知道我们调用的是它的方法，如果使用 `rect1.width`，则是访问它的字段
-// 一般来说，方法跟字段同名，往往适用于实现 `getter` 访问器
+
+// Rust 并没有一个与 -> 等效的运算符；相反，Rust 有一个叫 自动引用和解引用的功能。方法调用是 Rust 中少数几个拥有这种行为的地方。
+// 当使用 object.something() 调用方法时，Rust 会自动为 object 添加 &（视可见性添加&mut)、 * 以便使 object 与方法签名匹配。也就是说，这些代码是等价的：
+// p1.distance(&p2); (&p1).distance(&p2);
+
+
+

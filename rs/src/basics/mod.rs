@@ -3,6 +3,9 @@ pub mod basic_types;
 pub mod controls;
 pub mod methods;
 pub mod compound_types;
+pub mod generics_traits;
+pub mod set_types;
+
 
 
 pub fn run_all() {
@@ -28,4 +31,19 @@ pub fn run_all() {
 
     controls::condition_control_run();
     controls::loop_control_run();
+
+
+    methods::impl_method();
+
+    generics_traits::const_fn_run();
+
+    set_types::vec_test();
+    set_types::binary_heap_test();
+    set_types::btree_map_test();
+    set_types::btree_set_test();
+    set_types::hashmap_test();
+    set_types::hashset_test();
+    set_types::link_list_test();
+    set_types::vec_deque_test();
+    
 }

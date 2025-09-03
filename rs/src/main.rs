@@ -8,7 +8,7 @@ mod data_structure;
 mod functional;
 mod macros;
 mod pointers;
-mod templates;
+mod generics;
 mod threadings;
 mod traits;
 mod unsafe_rs;
@@ -51,7 +51,7 @@ fn main() {
     match selection {
         0 => basics::run_all(),      // basics/mod.rs 中写一个 run_all() 调用该文件夹下所有示例
         1 => async_await::run_all(),
-        2 => templates::run_all(),
+        2 => generics::run_all(),
         _ => unreachable!(),
     }
 }

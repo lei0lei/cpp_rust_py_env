@@ -5,11 +5,11 @@ pub mod methods;
 pub mod compound_types;
 pub mod generics_traits;
 pub mod set_types;
-
+pub mod pointer;
 
 
 pub fn run_all() {
-    println!("运行 basics 模块所有示例:");
+    println!("==== ==== ==== ==== 运行 basics 模块所有示例 ==== ==== ==== ====");
     variables::ex1_variable_run();
     variables::ex2_name_rules();
     variables::ex3_unpack_run();
@@ -46,4 +46,5 @@ pub fn run_all() {
     set_types::link_list_test();
     set_types::vec_deque_test();
     
+    pointer::box_pointer_test();
 }

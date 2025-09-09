@@ -6,7 +6,7 @@ pub mod compound_types;
 pub mod generics_traits;
 pub mod set_types;
 pub mod pointer;
-
+pub mod comments;
 
 pub fn run_all() {
     println!("==== ==== ==== ==== 运行 basics 模块所有示例 ==== ==== ==== ====");
@@ -47,4 +47,16 @@ pub fn run_all() {
     set_types::vec_deque_test();
     
     pointer::box_pointer_test();
+
+
+
+    comments::comment_line();
+    comments::comment_doc();
+    comments::doc_test(1);
+    comments::panic_test(1, 1);
+
+
+
+
+    
 }
